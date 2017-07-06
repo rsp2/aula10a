@@ -1,20 +1,17 @@
 <section>
 
-  <script>
-  
-  $(document).ready(function() {
-    $('select').material_select();
-  });
-  </script>
-
   <article>
-
+  <div class="row">
+    <div class="col s12 m12">
     <h3>Interpolation</h3>
 
     <p>Endereço do site: {{ url }}</p>
     <p>Valor: {{ 3 + getValor() }}</p>
-
+    </div>
+  </div>
   </article>
+
+
 
   <!--<article>
     <h3>Property Binding</h3>
@@ -25,7 +22,12 @@
 
 
 <article>
-<h3>Class and Style Binding</h3>
+  <div class="row">
+    <div class="col s12 m12">
+    <h3>Class and Style Binding</h3>
+    </div>
+  </div>
+
 <!--        
   <div class="row">
     <label>Browser default Select</label>
@@ -37,15 +39,37 @@
     </select>
   </div>-->
   <div class="row">
-      <label>Materialize Select</label>
-      <select materialize="material_select">
-        <option value="" disabled selected>Select Fruit</option>
-        <option value="1">Mango</option>
-        <option value="2">Orange</option>
-        <option value="3">Apple</option>
-      </select>               
+    <div class="col s2 m2">
+    <label>Materialize Select</label>
+    <select materialize="material_select" #selecao>
+      <option value="" disabled selected>Select Shadow</option>
+      <option value="1">Shadow 1</option>
+      <option value="2">Shadow 2</option>
+      <option value="3">Shadow 3</option>
+      <option value="4">Shadow 4</option>
+      <option value="5">Shadow 5</option>
+    </select>  
+    </div>             
   </div>
-  
+
+<div class="row">
+  <div class="col s2 m2">
+    <label> Teste Shadow 1</label>
+    <div class="card-panel teal lighten-2" [class.z-depth-5]="selecao.value === '5'" [class.z-depth-4]="selecao.value === '4'" [class.z-depth-3]="selecao.value === '3'">
+      This is a card panel with a teal lighten-2 class
+    </div>
+    <p class="z-depth-1">z-depth-1</p>
+  </div>
+
+  <div class="col s2 m2">
+    <label> Teste Shadow 2</label>
+    <div class="card-panel teal darken-5 z-depth-{{ selecao.value }}">
+      This is a card panel with a teal lighten-2 class
+    </div>
+    <p class="z-depth-1">z-depth-1</p>
+  </div>
+</div>  
+
 </article>
 
 </section>
