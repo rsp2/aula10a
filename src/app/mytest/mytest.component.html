@@ -1,0 +1,51 @@
+<section>
+
+  <script>
+  
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+
+  <article>
+
+    <h3>Interpolation</h3>
+
+    <p>Endereço do site: {{ url }}</p>
+    <p>Valor: {{ 3 + getValor() }}</p>
+
+  </article>
+
+  <!--<article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImagem }}">
+    <img [src]="urlImagem2">
+  </article>-->
+  
+
+
+<article>
+<h3>Class and Style Binding</h3>
+<!--        
+  <div class="row">
+    <label>Browser default Select</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Select Fruit</option>
+      <option value="1">Mango</option>
+      <option value="2">Orange</option>
+      <option value="3">Apple</option>
+    </select>
+  </div>-->
+  <div class="row">
+      <label>Materialize Select</label>
+      <select materialize="material_select">
+        <option value="" disabled selected>Select Fruit</option>
+        <option value="1">Mango</option>
+        <option value="2">Orange</option>
+        <option value="3">Apple</option>
+      </select>               
+  </div>
+  
+</article>
+
+</section>
