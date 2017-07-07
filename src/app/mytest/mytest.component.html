@@ -82,3 +82,84 @@
 </article>
 
 </section>
+
+<section>
+  <article>
+
+<div class="row">
+  <div class="col s2 m2">
+
+<h3>Event Binding</h3>
+
+    <a class="btn-floating btn-large waves-effect waves-light red" (click)="bclick()">
+      <i class="material-icons">add</i>
+    </a>
+
+  </div>
+
+</div>  
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate"
+                (keyup)="onKeyUp($event)"
+                (keyup.enter)="onEnter($event.target.value)"
+                (blur)="onEnter(cp.value)"
+                #cp />
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+        <p>Valor Atual: {{ valorAtual }}</p>
+        <p>Valor Salvo: {{ valorSalvo }}</p>
+      </div>
+    </form>
+  </div>
+
+  <div
+    (mouseover)="onMouseOverOut()"
+    (mouseout)="onMouseOverOut()"
+    [class.highlight]="isMouseOver"
+    >
+    Passe o mouse aqui
+  </div>
+    
+  </article>
+</section>
+
+<section>
+  <article>
+    <div class="row">
+      <form class="col s12">
+        <h3>Two-way data binding</h3>
+        <div class="input-field col s4">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate"
+                  [value]="nome"
+                  (input)="nome = $event.target.value"
+                  />
+          <label for="icon_prefix">Name</label>
+        </div>
+        <div class="col s4">
+
+
+        </div>
+        
+      </form>
+          <input type="text"
+                  [ngModel]="nome"
+                  (ngModelChange)="nome = $event"
+                  />
+          <input type="text"
+                  [(ngModel)]="nome"
+                  />
+      <div>Você digitou o nome: {{ nome }}</div>
+    </div>
+  </article>
+</section>

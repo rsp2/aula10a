@@ -6,6 +6,7 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { MytestComponent } from './mytest/mytest.component';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MytestComponent } from './mytest/mytest.component';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule
+    MaterializeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

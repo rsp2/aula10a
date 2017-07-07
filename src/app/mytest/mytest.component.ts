@@ -11,8 +11,31 @@ export class MytestComponent implements OnInit {
   urlImagem:string = 'https://conquistadigital.com.br/wp-content/uploads/2014/07/Sites-de-Imagens-Para-O-Seu-Blog.jpg';
   urlImagem2:string = 'http://www.scrapsdinamicos.com.br/imagens/imagens-imagens-44.jpg';
   
+  valorAtual:string = '';
+  valorSalvo:string = '';
+  nome:string = 'abc';
+
   getValor() {
     return 2;
+  }
+
+  onKeyUp(event:KeyboardEvent) {
+    //console.log((<HTMLInputElement>event.target).value);
+    this.valorAtual = (<HTMLInputElement>event.target).value;
+  }
+
+  isMouseOver:boolean  = false;
+
+  onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver;
+  }
+
+  onEnter(v:string) {
+    this.valorSalvo = v;
+  }
+
+  bclick() {
+    alert("Botão Clicado!!!")
   }
 
   constructor() { }
