@@ -15,6 +15,8 @@ export class MytestComponent implements OnInit {
   valorSalvo:string = '';
   nome:string = 'abc';
 
+  nomeCurso:string = 'Angular';
+
   getValor() {
     return 2;
   }
@@ -36,6 +38,10 @@ export class MytestComponent implements OnInit {
 
   bclick() {
     alert("Botão Clicado!!!")
+  }
+
+  onMudouValor(evento) {
+    console.log(evento.novoValor);
   }
 
   constructor() { }
